@@ -1,3 +1,5 @@
+import 'package:airbnb_app/views/pages/post/home/home_body_banner.dart';
+import 'package:airbnb_app/views/pages/post/home/home_body_popular.dart';
 import 'package:flutter/material.dart';
 
 class HomeBody extends StatelessWidget {
@@ -5,6 +7,11 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        HomeBodyBanner(),
+        HomeBodyPopular(),
+      ],
+    );
   }
 }

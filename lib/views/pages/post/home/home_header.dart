@@ -1,3 +1,5 @@
+import 'package:airbnb_app/views/pages/post/home/home_header_appbar.dart';
+import 'package:airbnb_app/views/pages/post/home/home_header_form.dart';
 import 'package:flutter/material.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -5,6 +7,11 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        HomeHeaderAppbar(),
+        HomeHeaderForm(),
+      ],
+    );
   }
 }
