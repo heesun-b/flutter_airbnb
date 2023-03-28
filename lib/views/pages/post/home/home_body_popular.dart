@@ -32,6 +32,14 @@ class HomeBodyPopular extends StatelessWidget {
   }
 
   Widget _popularTitle() {
-    return SizedBox();
+    return Column(
+      children: [
+        Text("한국 숙소에 직접 다녀간 게스트의 후기"
+          , style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),)
+        , Text("게스트 후기 2,500,000개 이상, 평균 평점 4.7점(5점 만점)"
+          , style: TextStyle(fontSize: 16, color: Colors.black),),
+        SizedBox(height: gap_m),
+      ],
+    );
   }
 }
