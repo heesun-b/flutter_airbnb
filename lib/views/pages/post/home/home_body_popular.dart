@@ -1,3 +1,4 @@
+import 'package:airbnb_app/core/size.dart';
 import 'package:airbnb_app/views/pages/post/home/home_body_popular_item.dart';
 import 'package:flutter/material.dart';
 
@@ -6,19 +7,31 @@ class HomeBodyPopular extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("h1"),
-        Text("h2"),
-        Row(
-          children: [
-            HomeBodyPopularItem(),
-            HomeBodyPopularItem(),
-            HomeBodyPopularItem(),
-          ],
-        )
-
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: gap_m),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _popularTitle(),
+          _popularList()
+        ],
+      ),
     );
+  }
+
+  Widget _popularList() {
+    return Wrap(
+        children: [
+          HomeBodyPopularItem(id: 0,),
+          SizedBox(width: 7.5,),
+          HomeBodyPopularItem(id: 1,),
+          SizedBox(width: 7.5,),
+          HomeBodyPopularItem(id: 2,),
+        ],
+      );
+  }
+
+  Widget _popularTitle() {
+    return SizedBox();
   }
 }

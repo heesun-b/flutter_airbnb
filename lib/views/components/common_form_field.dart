@@ -1,10 +1,42 @@
 import 'package:flutter/material.dart';
 
 class CommonFormField extends StatelessWidget {
-  const CommonFormField({Key? key}) : super(key: key);
+  final prefixText;
+  final hintText;
+
+  const CommonFormField({required this.prefixText, required this.hintText});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Stack(
+      children: [
+        TextFormField(
+          textAlignVertical: TextAlignVertical.bottom,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.only(top: 30, left: 20, bottom: 10),
+            hintText: hintText,
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10)
+            ),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2
+                )
+            ),
+          ),
+
+        ),
+        Positioned (
+          top: 8,
+          left: 20,
+          child: Text(
+            prefixText,
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black),
+          ),
+        )
+      ],
+    );
   }
 }
